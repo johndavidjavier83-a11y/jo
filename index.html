@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="John David Javier - Academic Student Portfolio">
+  <title>JD Portfolio | Academic Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="orb orb-1"></div><div class="orb orb-2"></div>
+
+  <header class="navbar">
+    <a class="brand" href="#home"><span>JD</span> PORTFOLIO</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#academic">Academic</a>
+      <a href="#activities">Activities</a>
+      <a href="#projects">Projects</a>
+      <button class="owner-link" id="ownerOpenBtn">Owner</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">ACADEMIC STUDENT PORTFOLIO</p>
+        <h1>John David<br><span>Javier</span></h1>
+        <p class="hero-text">A digital collection of my academic activities, quizzes, examinations, projects, and learning journey.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#academic">Explore My Work</a>
+          <a class="btn ghost" href="#about">About Me</a>
+        </div>
+      </div>
+      <div class="profile-wrap reveal">
+        <div class="profile-ring"></div>
+        <div class="profile-card">
+          <img id="profileImage" src="images/profile.jpg" alt="Profile photo" onerror="this.style.display='none'; document.getElementById('profileFallback').style.display='grid';">
+          <div id="profileFallback" class="profile-fallback">JD</div>
+        </div>
+        <div class="floating-tag tag-one">BSCS</div>
+        <div class="floating-tag tag-two">PORTFOLIO</div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">ABOUT ME</p>
+        <h2>My Academic Journey</h2>
+      </div>
+      <div class="about-grid">
+        <div class="glass about-card reveal">
+          <h3>Who I Am</h3>
+          <p>I am John David Javier, a BSCS student building my skills in computer science, programming, web development, and academic projects.</p>
+          <p>This portfolio is a place where I can organize and present my school work in a clean, accessible way.</p>
+        </div>
+        <div class="facts reveal">
+          <div class="fact"><span>01</span><strong>Course</strong><small>BSCS</small></div>
+          <div class="fact"><span>02</span><strong>Focus</strong><small>Programming & Web Development</small></div>
+          <div class="fact"><span>03</span><strong>Purpose</strong><small>Academic Portfolio</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="academic" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">ACADEMIC WORK</p>
+        <h2>My School Files</h2>
+        <p>Visitors can view and download published files. Only the portfolio owner can manage uploads.</p>
+      </div>
+      <div class="category-grid">
+        <article class="category-card reveal"><div class="icon">QZ</div><h3>Quiz</h3><p>Short quizzes and assessments.</p><button class="view-cat" data-category="quiz">View Files</button></article>
+        <article class="category-card reveal"><div class="icon">LQ</div><h3>Long Quiz</h3><p>Long quizzes and major assessments.</p><button class="view-cat" data-category="long-quiz">View Files</button></article>
+        <article class="category-card reveal"><div class="icon">MT</div><h3>Midterms</h3><p>Midterm examination files.</p><button class="view-cat" data-category="midterms">View Files</button></article>
+        <article class="category-card reveal"><div class="icon">FN</div><h3>Finals</h3><p>Final examination files.</p><button class="view-cat" data-category="finals">View Files</button></article>
+      </div>
+    </section>
+
+    <section id="activities" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">ACTIVITIES</p>
+        <h2>Class Activities</h2>
+        <p>Pictures and files from academic activities and assignments.</p>
+      </div>
+      <div class="file-section glass reveal">
+        <div class="section-icon">AC</div>
+        <div><h3>Activities</h3><p>Assignments, exercises, laboratory work, and other activities.</p></div>
+        <button class="view-cat" data-category="activities">View Files</button>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">PROJECTS</p>
+        <h2>My Projects</h2>
+        <p>School projects and completed works.</p>
+      </div>
+      <div class="file-section glass reveal">
+        <div class="section-icon">PR</div>
+        <div><h3>Projects</h3><p>Web, programming, database, design, and other project files.</p></div>
+        <button class="view-cat" data-category="projects">View Files</button>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>© <span id="year"></span> John David Javier. Academic Portfolio.</p><p class="footer-note">View & download for visitors • Owner-only management</p></footer>
+
+  <div class="modal" id="filesModal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" data-close="filesModal">×</button>
+      <p class="eyebrow" id="modalEyebrow">FILES</p>
+      <h2 id="modalTitle">Files</h2>
+      <div id="fileList" class="file-list"><div class="loading">Loading files...</div></div>
+    </div>
+  </div>
+
+  <div class="modal" id="ownerModal" aria-hidden="true">
+    <div class="modal-box owner-box">
+      <button class="modal-close" data-close="ownerModal">×</button>
+      <p class="eyebrow">OWNER AREA</p>
+      <h2>Portfolio Manager</h2>
+      <div id="authArea">
+        <form id="loginForm" class="owner-form">
+          <label>Username<input id="email" type="text" required placeholder="Owner username"></label>
+          <label>Password<input id="password" type="password" required placeholder="Password"></label>
+          <button class="btn primary" type="submit">Sign In</button>
+          <p id="authMessage" class="message"></p>
+        </form>
+      </div>
+      <div id="adminArea" class="admin-area hidden">
+        <div class="owner-top"><strong>Owner Mode</strong><button id="logoutBtn" class="btn small">Sign Out</button></div>
+        <form id="uploadForm" class="owner-form">
+          <label>Category
+            <select id="uploadCategory">
+              <option value="quiz">Quiz</option><option value="long-quiz">Long Quiz</option>
+              <option value="midterms">Midterms</option><option value="finals">Finals</option>
+              <option value="activities">Activities</option><option value="projects">Projects</option>
+            </select>
+          </label>
+          <label>Title<input id="uploadTitle" required placeholder="e.g. Quiz 1"></label>
+          <label>Choose image or file<input id="uploadFile" type="file" required accept="image/*,.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.zip"></label>
+          <button class="btn primary" type="submit">Upload File</button>
+          <p id="uploadMessage" class="message"></p>
+        </form>
+        <div class="admin-list" id="adminList"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
